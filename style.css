@@ -7,7 +7,7 @@
     --fs-xxl: 2.45rem;
     --fs-xxxl: 4.08rem;
     --Color-main: white;
-    --Color-pink:	#FFC2C7;
+    --Color-pink:	#ffc2c7;
     --Color-purple: rgb(169, 191, 228)	;
     --Color-purple-opacity: rgba(169, 191, 228, 0.3)	;
     --Color-purple-name-descr:	#989EC3;
@@ -24,58 +24,63 @@
 body{
     overflow-x: hidden;
 }
-.header{
+header{
+    width: 100%;
     display: flex;
     background-color: var(--Color-purple);
-    justify-content: center;
-    height: 70px;
     box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    justify-content: center;
     position: fixed;
-    width: 100%;
-    top: 0;
     z-index: 1;
+    top: 0;
 }
-.menu-items{
+div.header{
     display: flex;
+    height: 70px;
+    justify-content: space-between;
+    width: 86%;
 }
-.menu-items > a >img{
+
+img[name='logo']{
     width: 136.5px;
     height: 55px;
     margin-top: 8px;
 }
-.menu-items ul{
-    margin-left: 82px;
+header span.menu-list{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
 }
-.menu-items ul li{
+header a + span > a{
     display: inline-block;
     list-style-type: none;
     margin-top: 30px;
 } 
-.menu-items ul > li > a{
+header a+ span >a{
     text-decoration: none;
     color: var(--Color-main);
-    margin-right: 70px;
     font-family: "Lora", serif;
     font-size: var(--fs-md2);
     font-weight: 700;
-    padding-bottom: 2px;
+    height: 35%;
     border-bottom: 1px rgba(0,0,0,0) solid;
     transition: 0.3s;
 }
-.menu-items ul a:hover{
+header span.menu-list > a:hover{
     border-bottom-color: var(--Color-main);
 }
-.function-in-menu{
-    margin-left: 15px;
-    display: flex;
-    width: 62px;
-    justify-content: space-between;
+
+header span > img[name='lupa']{
+    margin-right: 15px;
 }
-.function-in-menu img{
+header ul + span{
+    display: inline;
+    justify-content: unset;
+}
+header img{
     cursor: pointer;
     width: 20px;
     height: 20px;
-    margin-top: 30px;
 }
 
 .main-page{
@@ -156,7 +161,6 @@ button{
     display: flex;
     justify-content: center;
 }
-
 .about-us > span.options > span{
     width: 210px;
     height: 145px;
@@ -187,10 +191,13 @@ button{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border: none;
     font-weight: 400;
+    border-radius: 0;
+    margin: 0;
 }
 
 .about-us > span button:hover{
     font-weight: 700;
+    transform: scale(110%,110%);
 }
 
 hr{
@@ -227,6 +234,7 @@ hr{
     font-size: 18px;
     width: 350px;
     margin-bottom: 8px;
+    margin-left: 14px;
     position: relative;
     line-height: calc(18px*1.29);
 }
@@ -270,26 +278,24 @@ span.social-media > img[src="./images/section2/viber.png"]{
     margin-left: -2px;
 }
 .our-functions{
-    height: 156px;
+    height: auto;
     background-color: var(--Color-purple-opacity);
     display: flex;
-    position: relative;
-    z-index: 1;
 }
-
+.container1{
+    margin: 0 auto;
+    width: 86%;
+}
 .our-functions h2{
-    font-size: 16px;
+    font-size: 18px;
     font-family: var(--ff-Lora);
-    display: block;
-    margin-top: 7px;
-    position: absolute;
+    margin-top: 10px;
+    color: var(--Color-purple-name-descr);
 }
 
 .our-functions .container{
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    width: 70%;
 }
 
 .our-functions .container p{
@@ -306,22 +312,15 @@ span.social-media > img[src="./images/section2/viber.png"]{
     margin-bottom: 0;
 }
 
-.container > span{
-    margin-top: 30px;
+.our-functions .container > span:not(span.header){
+    margin-top: 20px;
     width: 180px;
     display:grid;
     justify-items: center;
     align-content: center;
+    margin-bottom: 10px;
 }
 
-.container > span:not(span:last-of-type){
-    margin-right: 100px;
-}
-
-/* section.catalog .content{
-    display: flex;
-    justify-content: center;
-} */
 
 section.catalog h2{
     margin-top: 48px;
@@ -331,25 +330,35 @@ section.catalog h2{
     margin-bottom: 24px;
 }
 
-section.catalog span > span{
+section.catalog div.content > span{
     width: 200px;
     height: 330px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0px 4px 8px 0px rgb(172, 172, 172);
+    box-shadow: 0px 4px 8px 0px var(--Color-pink);
     text-align: center;
     padding-bottom: 10px;
+    margin-right: 100px;
 }
 
-.content{
-    display: flex;
+section.catalog .content{
+    /* display: flex;
     justify-content: space-between;
+    overflow: auto; */
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 1 1;
+    overflow-x: auto;
+    width: 100%;
     margin: 0 auto;
-    width: 70%;
 }
 
-section.catalog span > span > img{
+section.catalog .container1{
+    display: block;
+}
+
+section.catalog div.content > img{
     width: 100%;
     height: 65%;
     padding-bottom: 10px;
