@@ -21,6 +21,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
 .header{
     display: flex;
     background-color: var(--Color-purple);
@@ -78,13 +81,15 @@
 .main-page{
     display: flex;
     justify-content:space-between;
-    margin-left: 85px;
+    margin-left: 7%;
+    width: 100%;
     margin-top: 140px;
-    margin-bottom: 80px;
+    margin-bottom: 200px;
 }
 
-.section1 > img{
+img[alt="web-background"]{
     position: absolute;
+    right: 0px;
 }
 
 .section1{
@@ -198,12 +203,13 @@ hr{
 
 .below-options{
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
+    margin-left: 7%;
+    width: 100%;
 }
 
 .about-us .description{
     margin-top: 46px;
-    margin-left: 82px;
     display: block;
 }
 
@@ -221,30 +227,27 @@ hr{
     font-size: 18px;
     width: 350px;
     margin-bottom: 8px;
-    margin-left: 14px;
     position: relative;
     line-height: calc(18px*1.29);
 }
 
 .side-imgs{
     margin-top: 120px;
-    right: 480px;
     display: flex;
 }
 
 .side-imgs img[alt='abstract-figure']{
-    width: 35%;
-    height: 36%;
+    width: 500px;
+    height: 270px;
     color: var(--Color-purple-name-descr);
-    right: 0px;
     position: absolute;
 }
 
 .side-imgs img[alt='women']{
     margin-top: 40px;
-    width: 320px;
-    height: 180px;
-    margin-right: 0px;
+    width: 348px;
+    height: 190px;
+    right: 20px;
     position: relative;
 }
 
@@ -261,19 +264,32 @@ span.social-media > img{
     position: relative;
     margin-bottom: 14px;
 }
-
+span.social-media > img[src="./images/section2/viber.png"]{
+    width: 24px;
+    height: 25px;
+    margin-left: -2px;
+}
 .our-functions{
     height: 156px;
     background-color: var(--Color-purple-opacity);
     display: flex;
-    justify-content: center;
     position: relative;
     z-index: 1;
 }
 
+.our-functions h2{
+    font-size: 16px;
+    font-family: var(--ff-Lora);
+    display: block;
+    margin-top: 7px;
+    position: absolute;
+}
+
 .our-functions .container{
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    width: 70%;
 }
 
 .our-functions .container p{
@@ -291,6 +307,7 @@ span.social-media > img{
 }
 
 .container > span{
+    margin-top: 30px;
     width: 180px;
     display:grid;
     justify-items: center;
@@ -301,10 +318,10 @@ span.social-media > img{
     margin-right: 100px;
 }
 
-section.catalog{
+/* section.catalog .content{
     display: flex;
     justify-content: center;
-}
+} */
 
 section.catalog h2{
     margin-top: 48px;
@@ -325,13 +342,22 @@ section.catalog span > span{
     padding-bottom: 10px;
 }
 
+.content{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 70%;
+}
+
 section.catalog span > span > img{
     width: 100%;
-    height: 60%;
+    height: 65%;
     padding-bottom: 10px;
 }
 
 section.catalog button{
     width: 75%;
-    height: 30px;
+    margin: 0 auto;
+    height: 35px;
+    font-size: 16px;
 }
